@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %} Изменение жанра {% endblock title %}
+{% block content %}
+    <form action="/edit_genre/" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="id" value = "{{ id }}">
+        <input type="text" name="name_ru" placeholder = "Напишите название на русском" >
+        <input type="text" name="name_an" placeholder = "Напишите название на английском">
+        <input type="text" name="desc" placeholder = "Описание">
+    </form>
+{ content %}

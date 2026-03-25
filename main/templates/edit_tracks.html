@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %} Изменение жанра {% endblock title %}
+{% block content %}
+ <form action="/edit_tracks/" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="id" value = "{{ id }}">
+        <input type="text" name="genre" placeholder = "Выберите жанр" >
+        <input type="text" name="name_tracks" placeholder = "Напишите название песни">
+        <input type="text" name="duration" placeholder = "Продолжительность">
+        </form>
+{ content %}

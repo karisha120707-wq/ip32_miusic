@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %} Главная{% endblock title %}
+{% block content %}
+<table>
+    <thead>
+        <tr>
+            <td>№</td>
+            <td>Жанр</td>
+            <td>Название трека</td>
+            <td>Продолжительность</td>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for t in tracks %}
+            <tr>
+                <td>{{t.id}}</td>
+                <td>
+                    {% for g in t.genre.all %}
+                        {{ g.name_ru}} 
+                    {% endfor %}
+                </td>
+                <td>{{t.title}}</td>
+                <td>{{t.duration}}</td>
+                <td><a href="/deltracks/{{t.id}}">Удалить</a></td>
+                <td><a href="/editracks/{{t.id}}  ">Редактировать</a></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="/addtracks">Добавить песню</a>
+{% endblock content %}
