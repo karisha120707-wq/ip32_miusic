@@ -21,8 +21,8 @@ from main import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.main),
-    path('genre', views.genres),
-    path('tracks', views.tracks),
+    path('genre/', views.genres),
+    path('tracks/', views.tracks),
 
     path('addgenre/', views.addgenre),
     path('editgenre/<int:id_genre>', views.editgenre),
@@ -33,4 +33,6 @@ urlpatterns = [
     path('deltracks/<int:id_track>', views.deltracks),
 
     path('artists/', views.artists),
+    path('add_artists/', views.add_artists),
+
 ]

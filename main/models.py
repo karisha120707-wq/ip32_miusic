@@ -8,7 +8,6 @@ class Artist (models.Model):
         return self.name
 
 
-
 class Genre(models.Model):
     name_ru = models.CharField(max_length=500)
     name_an = models.CharField(max_length=500)
