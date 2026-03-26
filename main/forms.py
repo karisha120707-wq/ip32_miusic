@@ -1,5 +1,5 @@
 from django import forms
-from .models import Genre, Tracks
+from .models import Genre, Tracks, Artist
 
 class AddGenreform(forms.ModelForm):
     class Meta:

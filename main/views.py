@@ -1,8 +1,13 @@
 from django.shortcuts import render, redirect
-from .models import Genre, Tracks
+from .models import Genre, Tracks, Artist
 from django.shortcuts import render
-from .forms import AddGenreform , tracksform
+from .forms import AddGenreform , tracksform, ArtistForm
 from django.http import HttpResponse
+
+def artists (request):
+    a = Artist.objects.all()
+    return render (request, 'artists.html', {'artists': a})
+
 
 
 def deltracks (request, id_track):
