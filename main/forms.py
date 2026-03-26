@@ -21,3 +21,12 @@ class tracksform(forms.ModelForm):
             'duration' : 'Продолжительность'
         }
 
+
+class ArtistForm (forms.ModelForm):
+    class Meta:
+        model = Artist
+        fields = '__all__'
+        labes = {
+            'name' : 'Имя / название',
+            'image' : 'Фотография'
+        }
