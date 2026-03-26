@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %} Исполнители {% endblock title %}
+{% block content %}
+    <table>
+    <thead>
+        <tr>
+            <td>№</td>
+            <td>Название</td>
+            <td>Фото</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </thead>
+     <tbody>
+        {% for a in artists %}
+            <tr>
+                <td>{{a.id}}</td>
+                <td>{{a.name}}</td>
+                <td><img class="artist_logo" src="/media/{{a.image}}" alt=""></td>
+                <td><a href="/deleteartists/{{a.id}}">Удалить</a></td>
+                <td><a href="/editartists/{{a.id}}  ">Редактировать</a></td>
+            </tr>
+            
+        {% endfor %}
+    </tbody>
+</table>
+<a href="/add_artists">Добавить исполнителя</a>
+{% endblock content %}
