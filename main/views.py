@@ -4,10 +4,12 @@ from django.shortcuts import render
 from .forms import AddGenreform , tracksform, ArtistForm
 from django.http import HttpResponse
 
+
+
+
 def artists (request):
     a = Artist.objects.all()
     return render (request, 'artists.html', {'artists': a})
-
 
 
 def deltracks (request, id_track):
@@ -79,4 +81,3 @@ def genres (request) :
 def tracks (request):
     track = Tracks.objects.all()
     return render (request, 'tracks.html', {'tracks': track})
-
