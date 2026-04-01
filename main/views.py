@@ -94,4 +94,10 @@ def genres (request) :
 
 def tracks (request):
     track = Tracks.objects.all()
-    return render (request, 'tracks.html', {'tracks': track})
+    art = Artist.objects.all()
+    artists = None
+    if request.method == "POST":
+        id_artists = request.POST.get('artist')
+        artists = Artist.objects.get(id = id_artists)
+        track = Tracks.objects.filter(artists = artists)
+    return render (request, 'tracks.html', {'tracks': track, 'artists' : art, 'current_artist': artists})

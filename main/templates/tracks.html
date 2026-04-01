@@ -1,12 +1,18 @@
 {% extends "base.html" %}
 {% block title %} Главная{% endblock title %}
 {% block content %}
-
-    <select name = "artist" onchange="this.form.submit()">
-        { % for a in artists %}
-            <option value="{{a.id}}">{{a}}</option>
-        {% endfor %}
+    <form method="post">
+        {% csrf_token %}
+        <select name = "artist" onchange="this.form.submit()">
+            {% for a in artists %}
+                {% if a.id == current_artist.id %}
+                    <option value="{{a.id}}" selected>{{a}}</option>
+                {% else %}
+                    <option value="{{a.id}}">{{a}}</option>
+                {% endif %}
+            {% endfor %}
     </select>
+</form>
 
 <table>
     <thead>
