@@ -4,6 +4,9 @@ from django.shortcuts import render
 from .forms import AddGenreform , tracksform, ArtistForm
 from django.http import HttpResponse
 
+
+
+
 def add_artists (request):
     if request.method == "POST":
         artists = ArtistForm(request.POST, request.FILES)

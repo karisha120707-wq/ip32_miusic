@@ -2,11 +2,11 @@
 {% block title %} Главная{% endblock title %}
 {% block content %}
 
-{ % for a in artists %}
-    <select>
-        <option value="option">{{a.name}}</option>
+    <select name = "artist" onchange="this.form.submit()">
+        { % for a in artists %}
+            <option value={{a.id}}>{{a}}</option>
+        {% endfor %}
     </select>
-{% endfor %}
 
 <table>
     <thead>
