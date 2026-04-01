@@ -4,7 +4,7 @@
 
     <select name = "artist" onchange="this.form.submit()">
         { % for a in artists %}
-            <option value={{a.id}}>{{a}}</option>
+            <option value="{{a.id}}">{{a}}</option>
         {% endfor %}
     </select>
 
