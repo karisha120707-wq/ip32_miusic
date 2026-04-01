@@ -32,6 +32,6 @@ urlpatterns = [
     path('editracks/<int:id_track>', views.editracks),
     path('deltracks/<int:id_track>', views.deltracks),
 
-    path('artists/', views.artists),
+    path('artists/', views.artists)
     
 ]
